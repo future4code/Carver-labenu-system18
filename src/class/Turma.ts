@@ -1,4 +1,4 @@
-import { Id } from "../interfaces/id";
+import { Id } from "../interface/id";
 
 export class Turma implements Id{
   public id: string;
