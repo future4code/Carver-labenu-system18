@@ -11,7 +11,7 @@ export class Estudantes implements Id{
    public id: string;  
    public nome: string;
    private email: string;
-   private data_nasc: any | Date;
+   private data_nasc: string;
    private turma_id: string;
    private hobbies: string;
 
@@ -19,7 +19,7 @@ export class Estudantes implements Id{
       id: string,
       nome: string,
       email: string,
-      data_nasc: any | Date,
+      data_nasc: string,
       turma_id: string,
       hobbies: string
       ){
