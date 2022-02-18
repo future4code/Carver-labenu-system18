@@ -19,4 +19,18 @@ export class Turma{
       this.estudantes = estudantes;
       this.modulo = modulo;
    }
+      
+   public pegaInfoTurma(){
+      return {
+      id: this.id,
+      nome:this.nome,
+      docentes:this.docentes,
+      estudantes:this.estudantes,
+      modulo:this.modulo
+      }
+   }
+
+
+
 }
+
