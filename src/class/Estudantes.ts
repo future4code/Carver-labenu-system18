@@ -32,12 +32,12 @@ export default async function criarEstudantes(
          return 
       }
 
-      await connection.insert({
-         nome,
-         email,
-         data_nasc,
-         turma_id: turmaId
-      }).into('estudante')
+      // await connection.insert({
+      //    nome,
+      //    email,
+      //    data_nasc,
+      //    turma_id: turmaId
+      // }).into('estudante')
 
       res
       .status(200)
