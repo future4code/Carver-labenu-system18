@@ -18,8 +18,8 @@ As tecnologias utilizados ao longo do projeto foram: Node,js, TypeScript, Mysql.
 
 ## Dependências
 
-    -Knex.js
     -Express.js
+    -Knex.js
     -Cors
     -Dotenv
 
