@@ -1,8 +1,7 @@
-import { Id } from "../interface/id";
 
-export class Turma implements Id{
-  public id: string;
-  public nome: string;
+export class Turma{
+  private id: string;
+  private nome: string;
   private docentes: string;
   private estudantes: string;
   private modulo?:number = 0; 
@@ -20,4 +19,18 @@ export class Turma implements Id{
       this.estudantes = estudantes;
       this.modulo = modulo;
    }
+      
+   public pegaInfoTurma(){
+      return {
+      id: this.id,
+      nome:this.nome,
+      docentes:this.docentes,
+      estudantes:this.estudantes,
+      modulo:this.modulo
+      }
+   }
+
+
+
 }
+
