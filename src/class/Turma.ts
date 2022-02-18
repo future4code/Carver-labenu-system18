@@ -1,8 +1,7 @@
-import { Id } from "../interface/id";
 
-export class Turma implements Id{
-  public id: string;
-  public nome: string;
+export class Turma{
+  private id: string;
+  private nome: string;
   private docentes: string;
   private estudantes: string;
   private modulo?:number = 0; 
