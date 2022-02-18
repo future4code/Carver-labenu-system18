@@ -5,8 +5,6 @@
 O objetivo deste projeto é criar um sistema que simula a plataforma
 da Labenu e sua organização, contando com toda a lógica desenvolvida através dos passos e tecnologias citadas ao longo deste documento.
 
-Implementação de requisição com instâncias de classe
-
 ### Integrantes:
 
 - Cesar Huber - https://www.linkedin.com/in/cesar-huber/
@@ -40,7 +38,9 @@ As tecnologias utilizados ao longo do projeto foram: Node,js, TypeScript, Mysql.
   data de início, data de término, lista de professores responsáveis, uma
   lista de alunos e módulo atual em que a turma está.
 
-2. Integração de toda a aplicação ao Banco de Dados MySQL.
+2. Implementação de requisições com instâncias de classe.
+
+3. Integração de toda a aplicação ao Banco de Dados MySQL.
 
 ## Funcionalidades
 
