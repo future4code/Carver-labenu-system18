@@ -1,4 +1,4 @@
-import connection from "../data/connection"
+import { connection } from "../data/connection"
 import {Request, Response} from 'express'
 import { Docente } from "../class/Docente"
 import { stringToDate } from "../stringToDate"
