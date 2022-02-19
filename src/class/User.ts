@@ -7,10 +7,10 @@ export abstract class User {
     protected turma_id: string
   ) {
     this.id = id,
-      this.nome = nome,
-      this.email = email,
-      this.data_nascimento = data_nascimento,
-      this.turma_id = turma_id
+    this.nome = nome,
+    this.email = email,
+    this.data_nascimento = data_nascimento,
+    this.turma_id = turma_id
   }
 
   public getUserInfo() {

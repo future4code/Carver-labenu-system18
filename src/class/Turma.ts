@@ -2,21 +2,15 @@
 export class Turma{
   private id: string;
   private nome: string;
-  private docentes: string;
-  private estudantes: string;
-  private modulo?:number = 0; 
+  private modulo?:number; 
 
    constructor(
       id: string,
       nome: string,
-      docentes: string,
-      estudantes: string,
-      modulo:number
+      modulo:number = 0
       ){
       this.id = id;
       this.nome = nome;
-      this.docentes = docentes;
-      this.estudantes = estudantes;
       this.modulo = modulo;
    }
       
@@ -24,8 +18,6 @@ export class Turma{
       return {
       id: this.id,
       nome:this.nome,
-      docentes:this.docentes,
-      estudantes:this.estudantes,
       modulo:this.modulo
       }
    }
