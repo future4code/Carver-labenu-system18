@@ -24,7 +24,7 @@ export const getDocentes = async (req: Request, res: Response): Promise<void> =>
 
     result = result[0]
 
-    if (!result) {
+    if (result.length === 0) {
       errorCode = 404
       throw new Error('Não foi encontrado nenhum registro com estas informações.')
     }

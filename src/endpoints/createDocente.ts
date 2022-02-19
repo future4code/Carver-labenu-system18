@@ -24,7 +24,7 @@ export const createDocente = async (req: Request, res: Response): Promise<void> 
       throw new Error('Já existe um usuário cadastrado com este email.')
     }
 
-    await connection('P_labenuSystem_Docentes').insert(newDocente.getDocenteBasicInfo())
+    await connection('P_labenuSystem_Docentes').insert(newDocente.getUserInfo())
 
     for (let i of especialidades) {
       const resultIdEspecialidade = await connection('P_labenuSystem_Especialidades').where('nome', i)
