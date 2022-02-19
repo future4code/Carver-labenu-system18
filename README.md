@@ -12,9 +12,11 @@ da Labenu e sua organização, contando com toda a lógica desenvolvida através
 
 ## Tecnologias
 
-As tecnologias utilizados ao longo do projeto foram: Node,js, TypeScript, Mysql.
+<img src="{https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white}" />
+<img src="{https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white}" />
+<img src="{https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white}" />
 
-## Dependências
+## Frameworks
 
     -Express.js
     -Knex.js
@@ -41,6 +43,8 @@ As tecnologias utilizados ao longo do projeto foram: Node,js, TypeScript, Mysql.
 2. Implementação de requisições com instâncias de classe.
 
 3. Integração de toda a aplicação ao Banco de Dados MySQL.
+
+As tecnologias utilizados ao longo do projeto foram: Node,js, TypeScript, Mysql.
 
 ## Funcionalidades
 
