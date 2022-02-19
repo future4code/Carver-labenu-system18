@@ -12,6 +12,7 @@ da Labenu e sua organização, contando com toda a lógica desenvolvida através
 
 ## Tecnologias
 
+![image]({https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white})
 <img src="{https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white}" />
 <img src="{https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white}" />
 <img src="{https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white}" />
