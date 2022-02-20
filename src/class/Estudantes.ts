@@ -1,58 +1,78 @@
-import { Request, Response } from "express";
-// import connection from "../data/connection";
+import { stringify } from "querystring";
+import { User } from "./User"; 
 
 
-
-// import { Turma } from "./Turma";
-// import { Id } from "../interfaces/id"
-
-
-
-
-export default async function criarEstudantes(
-   req:Request,
-   res:Response
-   ){
-   try {
-      const{nome, email, data_nasc} = req.body;
-
-      const turmaId = Number(req.body.turma_id)
-   
-   if(
-      !req.body.nome ||
-      !req.body.email ||
-      !req.body.data_nasc ||
-      !turmaId
+export class Estudante extends User{
+   constructor(
+      id: string,
+      nome: string,
+      email: string,
+      data_nascimento: string,
+      turma_id:string,
+      private hobbies: string
       ){
-        res
-        .status(400)
-        .send({
-           message: "'Preencha' os campos 'nome', 'email', 'data_nasc' e 'turma_id "
-         }) 
-         return 
+       super(id, nome, email, data_nascimento,turma_id);
+       this.hobbies = hobbies
+   }
+
+   public getEstudanteInfos(){
+      return{
+         id: this.id,
+         nome: this.nome,
+         email: this.email,
+         data_nascimento: this.data_nascimento,
+         turma_id: this.turma_id,
+         hobbies: this.hobbies
       }
-
-      // await connection.insert({
-      //    nome,
-      //    email,
-      //    data_nasc,
-      //    turma_id: turmaId
-      // }).into('estudante')
-
-      res
-      .status(200)
-      .send({
-         message:"Estudante cadastrado com sucesso!"
-      })
-      
-   }catch(error:any){
-      res
-      .status(400)
-      .send({
-         message: error.message
-         })
    }
 }
+
+
+
+// export default async function criarEstudantes(
+//    req:Request,
+//    res:Response
+//    ){
+//    try {
+//       const{nome, email, data_nasc} = req.body;
+
+//       const turmaId = Number(req.body.turma_id)
+   
+//    if(
+//       !req.body.nome ||
+//       !req.body.email ||
+//       !req.body.data_nasc ||
+//       !turmaId
+//       ){
+//         res
+//         .status(400)
+//         .send({
+//            message: "'Preencha' os campos 'nome', 'email', 'data_nasc' e 'turma_id "
+//          }) 
+//          return 
+//       }
+
+//       // await connection.insert({
+//       //    nome,
+//       //    email,
+//       //    data_nasc,
+//       //    turma_id: turmaId
+//       // }).into('estudante')
+
+//       res
+//       .status(200)
+//       .send({
+//          message:"Estudante cadastrado com sucesso!"
+//       })
+      
+//    }catch(error:any){
+//       res
+//       .status(400)
+//       .send({
+//          message: error.message
+//          })
+//    }
+// }
 
 
 
