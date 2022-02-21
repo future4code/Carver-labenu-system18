@@ -6,7 +6,7 @@ import { stringToDate } from "../stringToDate";
 export const createEstudante = async ( req:Request, res: Response):Promise<void> => {
    let errorCode = 400
    try {
-      const id = Date.now().toString()
+      const id = 'S' + Date.now().toString()
       const {nome, email, data_nascimento, turma_id, hobbies} = req.body
 
       if(!nome ||
@@ -20,7 +20,7 @@ export const createEstudante = async ( req:Request, res: Response):Promise<void>
       }
 
       const data_nasc = stringToDate(data_nascimento)
-      const newEstudante = new Estudante(id, nome, email, data_nascimento, turma_id, hobbies) 
+      const newEstudante = new Estudante(id, nome, email, data_nasc, turma_id, hobbies) 
 
       const check = await connection('P_labenuSystem_Estudantes').where('email', email)
 
@@ -32,12 +32,15 @@ export const createEstudante = async ( req:Request, res: Response):Promise<void>
       await connection('P_labenuSystem_Estudantes').insert(newEstudante.getUserInfo())
 
       for (let i of hobbies) {
-         const resultIdHobbie = await connection('P_labenuSystema_Estudantes').where('nome', i)
-         const idEst = 'S' + Date.now().toString()
+         const rawHobbyId = await connection('P_labenuSystem_Estudantes').select('id').where('nome', 'like', i)
+         let hobbyId = ''
+         if (rawHobbyId.length === 0) {hobbyId = 'H' + Date.now().toString()} 
+         else {hobbyId = rawHobbyId[0].id}
+         const idHobbyEstudante = 'HS' + Date.now().toString()
          const estudanteHobbie = {
-            id: idEst,
-            estudante_id:id,
-            hobbies_id: resultIdHobbie[0].id
+            id: idHobbyEstudante,
+            estudante_id: id,
+            hobby_id: hobbyId
          }
          await connection('P_labenuSystem_Estudantes_Hobbies').insert(estudanteHobbie)
       }
