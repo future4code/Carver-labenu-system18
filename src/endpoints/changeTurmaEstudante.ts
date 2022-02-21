@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 import { connection } from "../data/connection"
 
-export const changeTurma = async(req:Request, res:Response): Promise<void> =>{
+export const changeTurmaEstudante = async(req:Request, res:Response): Promise<void> =>{
    let errorCode = 400
    try {
 

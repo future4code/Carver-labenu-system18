@@ -2,7 +2,7 @@ import { Request, Response} from 'express'
 import { connection } from "../data/connection"
 import { dateToString } from "../dateToString"
 
-export const getEstudantes = async(req:Request, res:Response):Promise<void> =>{
+export const getEstudante = async(req:Request, res:Response):Promise<void> =>{
    let errorCode = 400
    try {
 
