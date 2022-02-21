@@ -29,11 +29,22 @@ export const createEstudante = async ( req:Request, res: Response):Promise<void>
          throw new Error("Este e-mail já consta em nosso sistema, por favor tente novamente.")
       }
 
-      await connection('P_labenuSystem_Estudantes').insert(newEstudante.)
+      await connection('P_labenuSystem_Estudantes').insert(newEstudante.getUserInfo())
 
+      for (let i of hobbies) {
+         const resultIdHobbie = await connection('P_labenuSystema_Estudantes').where('nome', i)
+         const idEst = 'S' + Date.now().toString()
+         const estudanteHobbie = {
+            id: idEst,
+            estudante_id:id,
+            hobbies_id: resultIdHobbie[0].id
+         }
+         await connection('P_labenuSystem_Estudantes_Hobbies').insert(estudanteHobbie)
+      }
 
+      res.status(201).send('Estudante registrado com sucesso')
+
+   }catch(error: any){
+      res.status(errorCode).send({message: error.message || error.sqlMessage})
    }
-
-
-
 }
